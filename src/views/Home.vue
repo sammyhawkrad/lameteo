@@ -84,9 +84,6 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  min-height: 370px;
-}
 #refresh {
   position: absolute;
   bottom: 50%;
