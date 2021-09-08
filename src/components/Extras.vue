@@ -44,7 +44,7 @@ export default {
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 15px;
+  margin-bottom: 3%;
   padding: 15px 15px;
   box-sizing: border-box;
 }

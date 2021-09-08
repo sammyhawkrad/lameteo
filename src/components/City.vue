@@ -21,7 +21,7 @@ export default {
 #city {
   text-align: center;
   font-size: 2em;
-  margin-bottom: 5px;
+  margin-bottom: 0.5%;
 }
 
 #date-time {

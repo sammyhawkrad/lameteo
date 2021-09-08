@@ -24,6 +24,6 @@ export default {
 }
 
 #container {
-  margin-bottom: 20px;
+  margin-bottom: 5%;
 }
 </style>
