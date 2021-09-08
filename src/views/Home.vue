@@ -7,7 +7,7 @@
     <a
       id="refresh"
       :class="{ rotating: refreshed }"
-      @click="getWeather(), (refreshed = !refreshed)"
+      @click="getlocation(), getWeather(), (refreshed = !refreshed)"
     >
       <img src="../assets/refresh.svg" alt="" />
     </a>
@@ -84,6 +84,9 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  min-height: 370px;
+}
 #refresh {
   position: absolute;
   bottom: 50%;
