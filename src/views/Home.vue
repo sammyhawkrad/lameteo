@@ -4,7 +4,11 @@
     <weather :weather="weather" />
     <temperature :weather="weather" />
     <extras :weather="weather" />
-    <a id="refresh" @click="getWeather()">
+    <a
+      id="refresh"
+      :class="{ rotating: refreshed }"
+      @click="getWeather(), (refreshed = !refreshed)"
+    >
       <img src="../assets/refresh.svg" alt="" />
     </a>
   </div>
@@ -32,6 +36,7 @@ export default {
       long: "",
       error: "",
       weather: {},
+      refreshed: false,
     };
   },
 
@@ -83,5 +88,28 @@ export default {
   position: absolute;
   bottom: 50%;
   right: 5%;
+}
+
+.rotating {
+  -webkit-animation: rotating 3s ease;
+  animation: rotating 3s ease-in-out;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
 </style>
