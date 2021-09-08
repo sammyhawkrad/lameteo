@@ -20,6 +20,7 @@
   margin: 80px auto auto auto;
   border-radius: 10px;
   box-shadow: 0px 0px 50px rgb(225, 225, 233);
+  padding-bottom: 15px;
 }
 
 #nav {

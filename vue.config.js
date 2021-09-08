@@ -1,5 +1,6 @@
 module.exports = {
   pwa: {
-    name: 'La Météo'
-  }
-}
+    name: "La Météo",
+  },
+  lintOnSave: true,
+};
