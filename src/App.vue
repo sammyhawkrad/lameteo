@@ -17,7 +17,7 @@
   border-radius: 10px;
   box-shadow: 0px 0px 50px rgb(225, 225, 233);
   padding-bottom: 2%;
-  padding-top: 5%;
+  padding-top: 2%;
   background-image: url("./assets/background.svg");
   background-color: #ecf2f742;
   background-repeat: no-repeat;
