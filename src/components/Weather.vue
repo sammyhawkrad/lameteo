@@ -15,7 +15,7 @@ export default {
   methods: {
     imagelink() {
       let icon = this.weather.weather[0].icon;
-      let iconLink = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+      let iconLink = `https://openweathermap.org/img/wn/${icon}@2x.png`;
       return iconLink;
     },
   },
