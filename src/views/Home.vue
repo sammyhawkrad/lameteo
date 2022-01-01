@@ -1,16 +1,21 @@
 <template>
-  <div class="home">
-    <city :weather="weather" />
-    <weather :weather="weather" />
-    <temperature :weather="weather" />
-    <extras :weather="weather" />
-    <a
-      id="refresh"
-      :class="{ rotating: refreshed }"
-      @click="getlocation(), getWeather(), (refreshed = !refreshed)"
-    >
-      <img src="../assets/refresh.svg" alt="" />
-    </a>
+  <div>
+    <div id="loading-view" v-if="loading">
+      Getting the latest weather in your area...
+    </div>
+    <div class="home" v-else>
+      <city :weather="weather" />
+      <weather :weather="weather" />
+      <temperature :weather="weather" />
+      <extras :weather="weather" />
+      <a
+        id="refresh"
+        :class="{ rotating: refreshed }"
+        @click="getlocation(), getWeather(), (refreshed = !refreshed)"
+      >
+        <img src="../assets/refresh.svg" alt="" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -37,6 +42,7 @@ export default {
       error: "",
       weather: {},
       refreshed: false,
+      loading: true,
     };
   },
 
@@ -60,6 +66,7 @@ export default {
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${process.env.VUE_APP_OWM_KEY}`,
         );
         this.weather = response.data;
+        this.loading = false;
       } catch (error) {
         console.log(error);
         alert(error);
@@ -72,7 +79,6 @@ export default {
       navigator.geolocation.getCurrentPosition((position) => {
         this.lat = position.coords.latitude;
         this.long = position.coords.longitude;
-        console.log(this.long, this.lat);
         this.getWeather();
       });
     } else {
@@ -88,6 +94,11 @@ export default {
   position: absolute;
   bottom: 50%;
   right: 5%;
+}
+
+#loading-view {
+  text-align: center;
+  margin-top: 30%;
 }
 
 .rotating {
